@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AYMORKAT | Televisions, Air Conditioners & Fridges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F8;--surface:#fff;--ink:#10203A;--muted:#52627A;--accent:#D62828;--accent-ink:#fff;--tag:#FFD23F;--tag-ink:#10203A;--line:#D5DCE6;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1A2B;--surface:#17253A;--ink:#EAF0F8;--muted:#9FB0C7;--accent:#FF6B6B;--accent-ink:#0F1A2B;--line:#2B3B54}
+}
+:root[data-theme="dark"]{--bg:#0F1A2B;--surface:#17253A;--ink:#EAF0F8;--muted:#9FB0C7;--accent:#FF6B6B;--accent-ink:#0F1A2B;--line:#2B3B54}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 1.5rem "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;padding:11px 20px;border-radius:999px;border:0;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn.small{padding:8px 16px;font-size:.9rem}
+.hero{padding:56px 0 40px;display:grid;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,8vw,4.2rem);font-weight:800;letter-spacing:-.03em;max-width:14ch}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:44ch;margin:16px 0 24px}
+.tag{position:relative;background:var(--tag);color:var(--tag-ink);border-radius:14px;padding:26px 24px 24px 56px;transform:rotate(-2deg);max-width:340px;box-shadow:0 8px 24px rgba(16,32,58,.18)}
+.tag::before{content:"";position:absolute;left:20px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px rgba(16,32,58,.25)}
+.tag b{display:block;font:800 2rem/1.05 "Bricolage Grotesque",sans-serif}
+.tag span{display:block;margin-top:8px;font-weight:500}
+@media(min-width:760px){.hero{grid-template-columns:1.4fr 1fr}.tag{justify-self:end}}
+section{padding:40px 0}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);font-weight:800;letter-spacing:-.02em}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}
+.filters button{font:inherit;font-weight:500;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.icon{font-size:2.6rem;line-height:1;width:72px;height:72px;display:grid;place-items:center;background:var(--bg);border-radius:12px}
+.card h3{font-size:1.2rem;font-weight:600}
+.card p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.price{font-weight:600;font-size:.9rem;background:var(--tag);color:var(--tag-ink);align-self:flex-start;padding:2px 10px;border-radius:6px}
+.steps{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:16px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:600}
+.steps strong{display:block}
+.steps span{color:var(--muted)}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.contact{background:#A61E1E;color:#fff;border-radius:20px;padding:36px 28px;margin:24px 0 48px}
+.contact p{max-width:46ch;opacity:.85;margin:12px 0 22px}
+.contact .btn{background:var(--tag);color:var(--tag-ink)}
+.links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px}
+.links a{color:inherit;font-weight:500}
+footer{padding:0 0 32px;color:var(--muted);font-size:.9rem}
+[hidden]{display:none!important}
+.ai-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:10;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.ai-panel{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:380px;margin-left:auto;height:min(70vh,520px);z-index:11;background:var(--surface);border:1px solid var(--line);border-radius:16px;display:none;flex-direction:column;box-shadow:0 12px 36px rgba(0,0,0,.3)}
+.ai-panel.open{display:flex}
+.ai-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font-weight:600}
+.ai-head button{background:none;border:0;color:var(--ink);font-size:1.5rem;cursor:pointer;line-height:1}
+.ai-log{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:9px 13px;border-radius:14px;white-space:pre-wrap;font-size:.95rem}
+.msg.me{align-self:flex-end;background:var(--accent);color:var(--accent-ink)}
+.msg.bot{align-self:flex-start;background:var(--bg)}
+.ai-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+.ai-form input{flex:1;min-width:0;font:inherit;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.ai-cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">AYMORKAT</a>
+    <a class="btn small" href="#" data-wa="Hello AYMORKAT, I would like to make an enquiry.">Chat with us</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Televisions, ACs and fridges for your home.</h1>
+      <p>Pick what you need, message us, and we will confirm the price and arrange delivery.</p>
+      <a class="btn" href="#products">Browse products</a>
+    </div>
+    <div class="tag" aria-hidden="true"><b>Need a price?</b><span>Just send us a message.</span></div>
+  </div>
+
+  <section id="products">
+    <div class="wrap">
+      <h2>What we sell</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter products"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How to order</h2>
+      <ol class="steps">
+        <li><div><strong>Pick a product</strong><span>Browse above and tap Ask for price.</span></div></li>
+        <li><div><strong>Send your message</strong><span>Your enquiry opens in WhatsApp, ready to send.</span></div></li>
+        <li><div><strong>Confirm and receive</strong><span>We reply with the price and delivery details.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="contact">
+      <h2>Not sure which one to buy?</h2>
+      <p>Tell us your room size, budget or the space you have, and we will point you to the right product.</p>
+      <a class="btn" href="#" data-wa="Hello AYMORKAT, please help me choose an appliance.">Message AYMORKAT</a>
+      <div class="links">
+        <a href="https://wa.me/2348080919031" target="_blank" rel="noopener">WhatsApp +234 808 091 9031</a>
+        <a href="https://wa.me/2348099049925" target="_blank" rel="noopener">AJIBODU MICHAEL TAIWO: WhatsApp +234 809 904 9925</a>
+        <a href="tel:+2348099049925">AJIBODU MICHAEL TAIWO: Call 0809 904 9925</a>
+        <a href="mailto:aajibodu04@gmail.com">aajibodu04@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer><div class="wrap"><a href="https://wa.me/2348080919031" target="_blank" rel="noopener">WhatsApp: +234 808 091 9031</a><br><a href="https://wa.me/2348099049925" target="_blank" rel="noopener">AJIBODU MICHAEL TAIWO: WhatsApp +234 809 904 9925</a><br><a href="tel:+2348099049925">AJIBODU MICHAEL TAIWO: Call 0809 904 9925</a><br><a href="mailto:aajibodu04@gmail.com">aajibodu04@gmail.com</a><br>&copy; <span id="yr"></span> AYMORKAT. All rights reserved.</div></footer>
+
+<button class="btn ai-btn" id="aiOpen" hidden>Ask our AI</button>
+<div class="ai-panel" id="aiPanel" role="dialog" aria-label="AYMORKAT assistant">
+  <div class="ai-head"><span>AYMORKAT assistant</span><button id="aiClose" aria-label="Close">&times;</button></div>
+  <div class="ai-log" id="aiLog" aria-live="polite"></div>
+  <div class="ai-form"><input id="aiInput" placeholder="Ask about a product" aria-label="Your question"><button class="btn small" id="aiSend">Send</button></div>
+</div>
+
+<script>
+// EDIT ME: your WhatsApp number in international format, digits only (e.g. "2348012345678").
+var WHATSAPP = "2348080919031";
+
+// EDIT ME: add, remove or rename products here. Add a price like price:"$450" to show it on the card.
+var PRODUCTS = [
+  {name:"Smart TV", cat:"Televisions", icon:"📺", desc:"Streams your apps straight from the screen. Ask about sizes in stock."},
+  {name:"LED TV", cat:"Televisions", icon:"🖥️", desc:"A reliable everyday screen for the living room or bedroom."},
+  {name:"Split air conditioner", cat:"Air conditioners", icon:"❄️", desc:"Wall-mounted cooling for bedrooms and living rooms."},
+  {name:"Window air conditioner", cat:"Air conditioners", icon:"🌬️", desc:"A simple, compact cooling option for smaller rooms."},
+  {name:"Double-door fridge", cat:"Fridges", icon:"🧊", desc:"Separate fridge and freezer compartments for the whole family."},
+  {name:"Single-door fridge", cat:"Fridges", icon:"🥛", desc:"Compact and easy on space for small homes and offices."},
+  {name:"Chest freezer", cat:"Fridges", icon:"🐟", desc:"Big storage for frozen food, meat and drinks."},
+  {name:"Washing machine", cat:"Other appliances", icon:"🫧", desc:"Cleaner laundry with less effort."},
+  {name:"Microwave oven", cat:"Other appliances", icon:"🍲", desc:"Heat and cook meals in minutes."}
+];
+
+var cats = ["All"].concat(PRODUCTS.map(function(p){return p.cat}).filter(function(c,i,a){return a.indexOf(c)===i}));
+var active = "All";
+
+function waLink(text){
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+}
+function render(){
+  var f = document.getElementById("filters");
+  f.innerHTML = "";
+  cats.forEach(function(c){
+    var b = document.createElement("button");
+    b.textContent = c;
+    b.setAttribute("aria-pressed", c===active);
+    b.onclick = function(){active = c; render();};
+    f.appendChild(b);
+  });
+  var g = document.getElementById("grid");
+  g.innerHTML = "";
+  PRODUCTS.filter(function(p){return active==="All"||p.cat===active}).forEach(function(p){
+    var d = document.createElement("article");
+    d.className = "card";
+    var i = document.createElement("div"); i.className="icon"; i.textContent=p.icon; i.setAttribute("aria-hidden","true");
+    var h = document.createElement("h3"); h.textContent = p.name;
+    var t = document.createElement("p"); t.textContent = p.desc;
+    var pr = document.createElement("span"); pr.className="price"; pr.textContent = p.price || "Price on request";
+    var a = document.createElement("a"); a.className="btn small"; a.textContent="Ask for price"; a.target="_blank"; a.rel="noopener";
+    a.href = waLink("Hello AYMORKAT, I am interested in the " + p.name + ". What is the price and is it available?");
+    d.append(i,h,t,pr,a);
+    g.appendChild(d);
+  });
+}
+document.querySelectorAll("[data-wa]").forEach(function(a){
+  a.href = waLink(a.getAttribute("data-wa")); a.target="_blank"; a.rel="noopener";
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+render();
+
+// Built-in shop assistant: written from scratch, runs in the page for every visitor (no account, no server, free).
+(function(){
+  var st={product:null,detail:"",stage:"start"};
+  //BOT-START
+  var KEYS=[
+    ["television",/\b(tv|tvs|television|televisions|screen)\b/],
+    ["air conditioner",/\b(ac|acs|air ?con\w*|air conditioner\w*|cooling)\b/],
+    ["fridge",/\b(fridge|fridges|refrigerator\w*|freezer\w*)\b/],
+    ["washing machine",/\b(washing|washer|laundry)\b/],
+    ["microwave oven",/\b(microwave\w*)\b/]
+  ];
+  var ASK={
+    "television":"Which room is it for, and how many people usually watch? Do you want smart features like YouTube or Netflix?",
+    "air conditioner":"How big is the room, and is it a bedroom, a living room or a shop?",
+    "fridge":"How many people are in your household, or is it for a shop or business?",
+    "washing machine":"How many people are in your household?",
+    "microwave oven":"Will you mostly reheat food, or do full cooking with it?"
+  };
+  var INTEREST=/\b(price|prices|cost|how much|buy|order|purchase|available|availability|in stock|deliver\w*|pay|payment|interested|i want|take it|ready)\b/;
+  var YES=/^\s*(yes|yeah|yep|yea|ok|okay|sure|please|pls|go ahead|alright|y)\b/;
+  var NO=/^\s*(no|nope|nah|not now|no thanks)\b/;
+  var GREET=/^\s*(hi|hello|hey|good (morning|afternoon|evening)|greetings)\b/;
+  var THANKS=/\b(thanks|thank you|thx)\b/;
+  var LIST="a TV, an air conditioner, a fridge, a washing machine or a microwave";
+  function rec(p,d){
+    d=d.toLowerCase();var t="";
+    if(p==="television"){
+      t=/small|bedroom|kitchen|one|alone/.test(d)?"A smaller LED or Smart TV suits a small room well.":/large|big|living|hall|parlou?r|church|hotel|family/.test(d)?"A big-screen Smart TV suits a large space best.":"A Smart TV is a good all-round choice, and an LED TV is a simple, dependable option.";
+      if(/smart|netflix|youtube|stream|apps?/.test(d))t+=" Since you want apps, go for a Smart TV.";
+    }else if(p==="air conditioner"){
+      t=/small|bedroom|single|one room/.test(d)?"A split AC is a quiet, comfortable fit for a bedroom, and a window AC is a simpler option for a small room.":/large|big|living|shop|hall|office|church/.test(d)?"For a bigger space, a split AC with higher cooling capacity is the better choice.":"A split AC suits most bedrooms and living rooms, and a window AC is a simple choice for smaller rooms.";
+    }else if(p==="fridge"){
+      t=/shop|business|restaurant|frozen|bulk|meat|fish/.test(d)?"A chest freezer is best for storing frozen food in bulk.":/[3-9]|three|four|five|six|family|large|big|kids|children/.test(d)?"A double-door fridge gives a family plenty of space, with separate fridge and freezer sections.":/[12]|one|two|single|alone|couple|small/.test(d)?"A single-door fridge is compact and enough for one or two people.":"A double-door fridge suits most families, and a single-door fridge is compact for small homes.";
+    }else if(p==="washing machine"){
+      t="A washing machine takes the effort out of laundry, and the right size depends on how much you wash each week.";
+    }else{
+      t="A microwave oven is great for quick reheating and simple cooking.";
+    }
+    return t+" Would you like our team to confirm the price and availability for you?";
+  }
+  function botReply(raw,s){
+    var m=raw.toLowerCase(),found=null,i;
+    for(i=0;i<KEYS.length;i++){if(KEYS[i][1].test(m)){found=KEYS[i][0];break}}
+    var isNew=found&&found!==s.product;
+    if(isNew){s.product=found;s.detail="";s.stage="asked"}
+    var wantsIt=INTEREST.test(m)||(s.stage==="offered"&&YES.test(m));
+    if(wantsIt){
+      if(!s.product){s.stage="pick";return {text:"Happy to help with that! Which product are you interested in: "+LIST+"?"}}
+      s.stage="handoff";
+      var sum=s.product+(s.detail?" ("+s.detail.trim().slice(0,80)+")":"");
+      return {text:"Great! Our team will confirm the price, availability and delivery for your "+s.product+". The quickest way is to continue with the owner on WhatsApp (+234 808 091 9031) or by email (aajibodu04@gmail.com). Tap a button below.",lead:sum};
+    }
+    if(s.stage==="offered"&&NO.test(m))return {text:"No problem! If you want to look at something else, just tell me what you need."};
+    if(THANKS.test(m))return {text:"You're welcome! Anything else I can help you find?"};
+    if(isNew)return {text:"Good choice! "+ASK[s.product]};
+    if(s.stage==="handoff")return {text:"Got it! Please share that with the owner on WhatsApp or email so they can confirm everything for you. Is there anything else I can help with?"};
+    if(s.product&&(s.stage==="asked"||s.stage==="offered")){s.detail+=" "+raw;s.stage="offered";return {text:rec(s.product,s.detail)}}
+    if(GREET.test(m))return {text:"Hello! Welcome to AYMORKAT. What are you looking for today: "+LIST+"?"};
+    return {text:"I can help you choose "+LIST+". What are you looking for? For anything else, you can chat with the owner on WhatsApp (+234 808 091 9031)."};
+  }
+  //BOT-END
+  var openB=document.getElementById("aiOpen"),panel=document.getElementById("aiPanel"),log=document.getElementById("aiLog"),input=document.getElementById("aiInput"),sendB=document.getElementById("aiSend");
+  function add(cls,t){var d=document.createElement("div");d.className="msg "+cls;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+  function cta(b,sum){
+    var msg="Hello AYMORKAT, I was chatting on your website. I am interested in: "+sum+".";
+    var d=document.createElement("div");d.className="ai-cta";
+    var w=document.createElement("a");w.className="btn small";w.textContent="Continue on WhatsApp";w.href=waLink(msg);w.target="_blank";w.rel="noopener";
+    var e=document.createElement("a");e.className="btn small alt";e.textContent="Email us";e.href="mailto:aajibodu04@gmail.com?subject="+encodeURIComponent("Enquiry from AYMORKAT website")+"&body="+encodeURIComponent(msg);
+    d.append(w,e);b.appendChild(d);
+  }
+  function send(){
+    var q=input.value.trim();if(!q)return;
+    input.value="";add("me",q);
+    var r=botReply(q,st),b=add("bot","...");
+    setTimeout(function(){b.textContent=r.text;if(r.lead)cta(b,r.lead);log.scrollTop=log.scrollHeight},450);
+  }
+  openB.hidden=false;
+  add("bot","Hi! I'm the AYMORKAT shop assistant (an automated helper). Tell me what you are looking for, like a TV, an AC or a fridge.");
+  openB.onclick=function(){panel.classList.add("open");openB.hidden=true;input.focus()};
+  document.getElementById("aiClose").onclick=function(){panel.classList.remove("open");openB.hidden=false};
+  sendB.onclick=send;
+  input.onkeydown=function(e){if(e.key==="Enter")send()};
+})();
+</script>
+</body>
+</html>
